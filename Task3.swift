@@ -35,20 +35,14 @@ func Task3(array:[Int]) -> [Int]
     var duplicates = [Int]()
     for i in 0..<array.count
  {
-     for j in i+1..<array.count
+   var replay = false
+     for j in 0..<array.count
                 {
-                    if array[i] == array[j]
-                     { var replay = false
-                         for duplicate in duplicates
-                       {
-                        if array[i] == duplicate
-                        {replay = true}
-                       }
-                       if(replay == false)
-                       { duplicates.append(array[i]) }
-                     }
-                    
+                    if array[i] == array[j] && i != j
+                     { replay = true }
                 }
+                if(replay == false)
+                       { duplicates.append(array[i]) }
  }
  return duplicates
 }
