@@ -3,25 +3,25 @@ import Foundation
 
 if CommandLine.arguments.count == 1 
 {
-guard let N  = Double(readLine()!) else
- {
-        exit(0)
- }
- guard let M  = Double(readLine()!) else
+   
+guard let V  = readLine() else {exit(0)}
+ guard let N = Double(V) else {exit(0)}
+
+ guard let M  = readLine() else
  {
         exit(0)       
  }
 
-guard let X  = Double(readLine()!) else
+guard let X  = readLine() else
  {
         exit(0)
  }
 
-guard let Y  = Double(readLine()!) else
+guard let Y  = readLine() else
  {
         exit(0)
  }
- print(Task1(N:N,M:M,X:X,Y:Y))
+ print(Task1(N:N,M:Double(M),X:Double(X),Y:Double(Y)))
 }
 else 
 {
@@ -29,7 +29,6 @@ else
     let M = Double(CommandLine.arguments[2])
     let X = Double(CommandLine.arguments[3])
     let Y = Double(CommandLine.arguments[4])
-    print(Task1(N:N!,M:M!,X:X!,Y:Y!))
 }
 
 func Task1(N:Double,M:Double,X:Double,Y:Double)->Double
