@@ -30,14 +30,10 @@ guard let Y1  = readLine() else
 }
 else 
 {
-    let N1 = CommandLine.arguments[1]
-    let M1 = CommandLine.arguments[2]
-    let X1 = CommandLine.arguments[3]
-    let Y1 = CommandLine.arguments[4]
-    guard let N = Double(N1) else {exit(0)}
-    guard let M = Double(M1) else {exit(0)}
-    guard let X = Double(X1) else {exit(0)}
-    guard let Y = Double(Y1) else {exit(0)}
+    guard let N = Double(CommandLine.arguments[1]) else {exit(0)}
+    guard let M = Double(CommandLine.arguments[2]) else {exit(0)}
+    guard let X = Double(CommandLine.arguments[3]) else {exit(0)}
+    guard let Y = Double(CommandLine.arguments[4]) else {exit(0)}
    print(Task1(N:N,M:M,X:X,Y:Y))
 }
 
