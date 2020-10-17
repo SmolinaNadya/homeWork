@@ -1,21 +1,23 @@
 import Foundation
 if CommandLine.arguments.count == 1 
 {
-guard let V  = Int(readLine()!) else
+guard let V1  = readLine() else
  {
         exit(0)
  }
- guard let T  = Int(readLine()!) else
+ guard let V = Int(V1) else {exit(0)}
+ guard let T1  = readLine() else
  {
-        exit(0)       
+        exit(0)
  }
+ guard let T = Int(T1) else {exit(0)}
  print(Task2(Speed:V,Time:T))
 }
 else 
 {
-    let V = Int(CommandLine.arguments[1])
-    let T = Int(CommandLine.arguments[2])
-    print(Task2(Speed:V!,Time:T!)) 
+    guard let V = Int(CommandLine.arguments[1]) else {exit(0)}
+    guard let T = Int(CommandLine.arguments[2]) else {exit(0)}
+    print(Task2(Speed:V,Time:T)) 
 }
  func Task2(Speed:Int,Time:Int) -> Int 
  {
