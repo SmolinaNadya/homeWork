@@ -2,14 +2,22 @@ import Foundation
 var array = [Int]()
 if CommandLine.arguments.count == 1 
 {
- guard var count  = Int(readLine()!) else
+ guard let count1 = readLine() else
+  {
+    exit(0)
+  }
+ guard var count  = Int(count1) else
  {
         exit(0)
  }
  
  while count>0
  {
-    guard let i  = Int(readLine()!) else
+    guard let i1  = readLine() else
+  {
+        exit(0)
+  }
+  guard let i = Int(i1) else
   {
         exit(0)
   }
@@ -24,7 +32,11 @@ else
     var i = 0
     while count != i
     {
-     array.append(Int(CommandLine.arguments[i+2])!)
+      guard let value = Int(CommandLine.arguments[i+2]) else 
+      {
+        exit(0)
+      }
+     array.append(value)
      i+=1
     }
 
